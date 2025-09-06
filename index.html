@@ -1,11 +1,53 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <title>Don't be scared of CSS</title>
+    <link rel="stylesheet" href="styles/main.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
 </head>
 <body>
-
+<header>
+    <h1>SEMESTER PROJECT</h1>
+    <h2>Don't be scared of CSS</h2>
+    <nav>
+        <ul>
+            <li>Center that div</li>
+            <li>Animations</li>
+            <li>Tables</li>
+        </ul>
+    </nav>
+</header>
+<main class="sections">
+    <article class="section">
+        <input type="checkbox" class=" section__toggle-input" id="toggle-center" >
+        >v
+        <a href="https://codepen.io/YOUR_USERNAME/pen/XYZ" target="_blank">
+            ▶ Try it on CodePen
+        </a>
+        <label for="toggle-center" class="section__header">
+            <h2 class="section__title" >Section Title</h2>
+            <span class="section__icon">sss</span>
+        </label>
+        <section class="section__content">
+            <h3>
+                Center with Flexbox
+            </h3> 
+            <div class="center center--flex">
+                <div class="center__box">
+                    flex
+                </div>
+            </div>
+            <h3>Center with Grid</h3>
+            <div class="center center--grid">
+                <div class="center__box">I'm centered with Grid</div>
+            </div>
+        </section>
+    </article>
+</main>
+<footer>
+Mariam Gevorgyan
+</footer>
 </body>
 </html>

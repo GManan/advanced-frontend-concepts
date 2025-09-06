@@ -1,0 +1,29 @@
+html, body {
+  height: 100%;
+  margin: 0; //wont be needed after i add the reset
+}
+body{
+  //  box-sizing: border-box;
+  border: solid #ff0000 10px ;
+  padding: 1em;
+  min-height: 100vh; //ensure full viewpoint height
+  background-color: #ffffff;
+  margin:0;
+  display: flex;
+  flex-direction: column;
+}
+header{
+  border: black solid 10px;
+  padding: 1em;
+}
+main{
+  border: #144cb3 solid 10px;
+  flex:1; // take remaning space between heaeder and footer
+  padding: 1em;
+
+}
+footer{
+  border: #ff0076 solid 10px;
+  padding: 1em;
+
+}
