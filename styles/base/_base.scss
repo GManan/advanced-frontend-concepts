@@ -1,3 +1,178 @@
- *,*::after, *::before {
-   box-sizing: border-box;
- }
+ /* order of layers is optional*/
+@layer reset, base;
+
+@layer reset {
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  :root {
+    scroll-behavior: smooth;
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust */
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+  /* or: ol, ul, dl --> semantic lists for screenreaders  */
+  [role="list"] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    /* vertical 
+    logical properties
+    
+    Physical – height, width
+    Logical – block-size, inline-size
+
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values*/
+    min-block-size: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  /* progressive enhancement
+  treating orphans */
+  p,
+  li {
+    text-wrap: pretty;
+    /* horizontal */
+    max-inline-size: 60ch;
+  }
+
+  img,
+  picture,
+  svg,
+  video {
+    /* vertical sizing */
+    display: block;
+    /* horizontal sizing */
+    max-inline-size: 100%;
+  }
+
+  input,
+  button,
+  textarea,
+  select/*,
+  em,
+  strong,
+  code*/ {
+    font: inherit;
+  }
+
+  /* for container-queries, just in case */
+  main,
+  section,
+  article {
+    container-type: inline-size;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    border: 1px solid;
+  }
+
+  a,
+  button {
+    cursor: pointer;
+  }
+}
+
+@layer base {
+  /* test layer: overwrites [role=list] reset layer */
+  ul {
+    list-style: circle;
+    padding: 5%;
+  }
+
+  /* Custom Properties */
+  :root {
+    --main-bg-color: hsl(0 0 90%);
+    --ff-basic: Verdana;
+
+    line-height: 1.6;
+    font-size: 1rem;
+    font-family: var(--ff-basic);
+    /* for quotation marks and the like, progressive enhancement, webkit only */
+    hanging-punctuation: first last;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  button,
+  input,
+  label {
+    line-height: 1.1;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  article {
+    background: var(--main-bg-color);
+    font-family: var(--ff-basic);
+  }
+
+  /* Structured Variables 
+  move up to :root Selector,
+  same with font-size, border-radius, etc. */
+  :root {
+    /* primitives */
+    --clr-grey-300: hsl(0 0 30%);
+    --clr-grey-400: hsl(0 0 40%);
+    --clr-grey-500: hsl(0 0 50%);
+    --clr-grey-600: hsl(0 0 60%);
+    --clr-grey-700: hsl(0 0 70%);
+    --clr-red-500: hsl(0 100% 50%);
+    --clr-blue-500: hsl(240 100% 50%);
+    --clr-green-500: hsl(90 100% 50%);
+
+    --clr-main-bg: var(--clr-grey-700);
+    --clr-accent: var(--clr-red-500);
+  }
+
+  p {
+    background: var(--clr-main-bg);
+  }
+
+  a {
+    color: var(--clr-accent);
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: var(--clr-green-500);
+  }
+
+  /* focus vs. focus-visible for tab,
+  try both */
+  button:focus-visible {
+    color: var(--clr-red-500);
+  }
+}
