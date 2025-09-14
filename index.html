@@ -27,22 +27,22 @@
                 <span class="c-section__title">CENTER THAT DIV</span>
             </label>
             <section class="c-section__content c-tabs">
-                <input type="radio" id="tab-flex" name="center-tabs">
-                <input type="radio" id="tab-grid" name="center-tabs">
-                <input type="radio" id="tab-relative" name="center-tabs">
-                <input type="radio" id="tab-absolute" name="center-tabs" checked>
-
+                
                 <div class="c-tabs__labels" role="tablist" aria-label="Centering techniques">
+                    <input type="radio" id="tab-flex" name="center-tabs">
                     <label for="tab-flex" role="tab" class="c-tabs__label">flexbox</label>
+                    <input type="radio" id="tab-grid" name="center-tabs">
                     <label for="tab-grid" role="tab" class="c-tabs__label">grid</label>
+                    <input type="radio" id="tab-relative" name="center-tabs">
                     <label for="tab-relative" role="tab" class="c-tabs__label">relative</label>
+                    <input type="radio" id="tab-absolute" name="center-tabs" checked>
                     <label for="tab-absolute" role="tab" class="c-tabs__label">absolute</label>
                 </div>
 
                 <div class="c-tabs__panels">
                     <section id="panel-flex" class="c-tabs__panel o-center-demo o-center-demo--flex" role="tabpanel"
                         aria-labelledby="tab-flex">
-                        <div class="center-demo__box">I'm centered with flexbox</div>
+                        <div class="o-center-demo__box">I'm centered with flexbox</div>
                         <p class="o-center-demo__explain">Use <code>display:flex;</code> + <code>justify-content</code>
                             + <code>align-items</code> to center horizontally and vertically.</p>
                     </section>

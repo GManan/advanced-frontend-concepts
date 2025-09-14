@@ -1,4 +1,14 @@
 @use "../settings/variables" as *;
+@use "../tools/animations" as *;
+@mixin tab-hover {
+    animation:  0.3s ease forwards;
+    color: $clr-accent;
+    background-color: $clr-secondary;
+}
+@mixin button-hover {
+    animation: anticipate-scale 1.2s ease forwards;
+    color: $clr-accent;
+}
 @mixin responsive-nav {
     ul {
         display: flex;
@@ -10,18 +20,21 @@
         li {
             box-sizing: border-box;
             border: 1px solid;
-            flex: 1 1 20em;
+            flex: 1 ;
             text-align: center;
+
             margin: .5em;
             padding: 0.5em;
             transition: background 0.3s, border-color 0.3s;
 
             &:hover {
-                background-color: $clr-accent;  
-                border-color: transparent;
+                // background-color: $clr-accent;
+                // border-color: transparent;
+
                 a {
-                    transform: scale(1.2);
-                    color: #fff;
+                    // animation: anticipate-scale 0.3s ease-in-out forwards;
+                    // color: #fff;
+                    @include button-hover;
                 }
             }
 
@@ -31,10 +44,8 @@
                 transition: transform 0.3s ease, color 0.3s;
                 transform-origin: center;
                 color: inherit;
-                &:active {
-                    color: $clr-secondary;
-                }
+                animation: none;
             }
         }
     }
-}
+};

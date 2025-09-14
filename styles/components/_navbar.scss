@@ -1,7 +1,7 @@
-@use "../tools/mixins" as *;
+@use "../tools/mixins" as mixins;
 
 .c-navbar {
-	@include responsive-nav;
-    
+	@include mixins.responsive-nav;
+
 }
 

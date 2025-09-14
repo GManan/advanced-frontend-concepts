@@ -1,4 +1,53 @@
-.c-tabs{
-  display: block;
-//   &_
+@use "../settings/variables" as *;
+@use "../tools/mixins" as mixins;
+
+//Hide radio inputs
+input[name="center-tabs"] {
+    display: none;
+}
+
+.c-tabs {
+    display: block;
+    // width: 100%;
+
+    &__labels {
+        display: flex;
+        justify-content: space-around;
+        // padding: $standard-padding;
+        // border: 1px solid $clr-accent;
+    }
+
+    &__label {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: none;
+        padding: 0.5em 1em;
+        border: 1px solid $clr-accent;
+        cursor: pointer;
+        flex: 1;
+        text-align: center;
+        
+        // background-color: turquoise;
+    
+    }
+    
+    &__panels {
+        border: 1px solid $clr-accent;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-top: none;
+        // border: none;
+        // margin-top: 0.5em;
+        padding: $standard-padding;
+        background-color: $clr-secondary;
+    }
+
+    
+}
+input[type="radio"]:checked + .c-tabs__label {
+    background: $clr-secondary;
+    color: $clr-text-on-accent;
+    font-weight: bold;
+    border-bottom: none;
+    // any other active styles
 }
