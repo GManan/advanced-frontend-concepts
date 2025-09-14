@@ -1,0 +1,94 @@
+
+@layer reset {
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    margin: 0;
+    border-radius: 1.5em;
+  }
+
+  :root {
+    scroll-behavior: smooth;
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust */
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+  /* or: ol, ul, dl --> semantic lists for screenreaders  */
+  [role="list"] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    /* vertical 
+    logical properties
+    
+    Physical – height, width
+    Logical – block-size, inline-size
+
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values*/
+    min-block-size: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  /* progressive enhancement
+  treating orphans */
+  p,
+  li {
+    text-wrap: pretty;
+    /* horizontal */
+    max-inline-size: 60ch;
+  }
+
+  img,
+  picture,
+  svg,
+  video {
+    /* vertical sizing */
+    display: block;
+    /* horizontal sizing */
+    max-inline-size: 100%;
+  }
+
+  input,
+  button,
+  textarea,
+  select/*,
+  em,
+  strong,
+  code*/ {
+    font: inherit;
+  }
+
+  /* for container-queries, just in case */
+  main,
+  section,
+  article {
+    container-type: inline-size;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    border: 1px solid;
+  }
+
+  a,
+  button {
+    cursor: pointer;
+  }
+}
+

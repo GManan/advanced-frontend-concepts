@@ -1,0 +1,7 @@
+@use "../tools/mixins" as *;
+
+.c-navbar {
+	@include responsive-nav;
+    
+}
+

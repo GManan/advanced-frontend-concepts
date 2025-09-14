@@ -1,0 +1,85 @@
+
+@layer base {
+  /* test layer: overwrites [role=list] reset layer */
+  ul {
+    list-style: circle;
+    // padding: 2%;
+  }
+
+  /* Custom Properties */
+  :root {
+    --main-bg-color: hsl(0 0 90%);
+    --ff-basic: Verdana;
+
+    line-height: 1.6;
+    font-size: 1rem;
+    font-family: var(--ff-basic);
+    /* for quotation marks and the like, progressive enhancement, webkit only */
+    hanging-punctuation: first last;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  button,
+  input,
+  label {
+    line-height: 1.1;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  article {
+    background: var(--main-bg-color);
+    font-family: var(--ff-basic);
+  }
+
+  /* Structured Variables 
+  move up to :root Selector,
+  same with font-size, border-radius, etc. */
+  :root {
+    /* primitives */
+    --clr-grey-300: hsl(0 0 30%);
+    --clr-grey-400: hsl(0 0 40%);
+    --clr-grey-500: hsl(0 0 50%);
+    --clr-grey-600: hsl(0 0 60%);
+    --clr-grey-700: hsl(0, 8%, 90%);
+    --clr-red-500: hsl(0 100% 50%);
+    --clr-blue-500: hsl(240 100% 50%);
+    --clr-green-500: hsl(236, 52%, 94%);
+    --clr-link-color: hsl(246, 23%, 9%);
+    --clr-main-bg: var(--clr-grey-700);
+    --clr-accent: var(--clr-red-500);
+  }
+
+  p {
+    background: var(--clr-main-bg);
+    padding: 5em;
+  }
+
+  a {
+    color: var(--clr-link-color);
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: var(--clr-green-500);
+  }
+
+  /* focus vs. focus-visible for tab,
+  try both */
+  button:focus-visible {
+    color: var(--clr-red-500);
+  }
+}

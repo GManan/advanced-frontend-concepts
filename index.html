@@ -1,49 +1,107 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Don't be scared of CSS</title>
-    <link rel="stylesheet" href="styles/main.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <title>Don't be scared of CSS</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
-<body>
-<header>
-    <h1>SEMESTER PROJECT</h1>
-    <h2>Don't be scared of CSS</h2>
-    <nav>
-        <ul>
-            <li>Center that div</li>
-            <li>Animations</li>
-            <li>Tables</li>
-        </ul>
-    </nav>
-</header>
-<main class="sections">
-    <section class="section">
-        <input type="checkbox" class=" section__toggle-input" id="toggle-center" hidden>
-        <label for="toggle-center" class="section__header">
-            <h2 class="section__title" >CENTER THAT DIV</h2>
-            <span class="section__icon"></span>
-        </label>
-        <section class="section__content">
-            <h3>
-                Center with Flexbox
-            </h3> 
-            <div class="center center--flex">
-                <div class="center__box">
-                    flex
+
+<body class="o-page">
+    <header class="o-header">
+        <h1>SEMESTER PROJECT</h1>
+        <h2>Don't be scared of CSS</h2>
+        <nav class="c-navbar">
+            <ul>
+                <li> <a href="#toggle-center">Center that div</a></li>
+                <li> <a href="#toggle-animations">Animations</a></li>
+                <li> <a href="#toggle-tables">Tables</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="o-main">
+        <section class="c-section">
+            <input type="checkbox" class="c-section__toggle-input" id="toggle-center" hidden>
+            <label for="toggle-center" class="c-section__header">
+                <span class="c-section__title">CENTER THAT DIV</span>
+            </label>
+            <section class="c-section__conten c-tabs">
+                <input type="radio" id="tab-flex" name="center-tabs">
+                <input type="radio" id="tab-grid" name="center-tabs">
+                <input type="radio" id="tab-relative" name="center-tabs">
+                <input type="radio" id="tab-absolute" name="center-tabs" checked>
+
+                <div class="c-tabs__labels" role="tablist" aria-label="Centering techniques">
+                    <label for="tab-flex" role="tab" class="c-tabs__label">flexbox</label>
+                    <label for="tab-grid" role="tab" class="c-tabs__label">grid</label>
+                    <label for="tab-relative" role="tab" class="c-tabs__label">relative</label>
+                    <label for="tab-absolute" role="tab" class="c-tabs__label">absolute</label>
+                </div>
+
+                <div class="c-tabs__panels">
+                    <section id="panel-flex" class="c-tabs__panel o-center-demo o-center-demo--flex" role="tabpanel"
+                        aria-labelledby="tab-flex">
+                        <div class="center-demo__box">I'm centered with flexbox</div>
+                        <p class="o-center-demo__explain">Use <code>display:flex;</code> + <code>justify-content</code>
+                            + <code>align-items</code> to center horizontally and vertically.</p>
+                    </section>
+                    <section id="panel-grid" class="c-tabs__panel o-center-demo o-center-demo--grid" role="tabpanel"
+                        aria-labelledby="tab-grid">
+                        <div class="center-demo__box">I'm centered with grid</div>
+                        <p class="o-center-demo__explain">Use <code>display:grid;</code> +
+                            <code>place-items:center;</code> to center horizontally and vertically.</p>
+                    </section>
+                    <section id="panel-relative" class="c-tabs__panel o-center-demo o-center-demo--relative"
+                        role="tabpanel" aria-labelledby="tab-relative">
+                        <div class="center-demo__box">I'm centered with relative</div>
+                        <p class="o-center-demo__explain">Use <code>position:relative;</code> + <code>top</code> +
+                            <code>left</code> + <code>transform</code> to center.</p>
+                    </section>
+                    <section id="panel-absolute" class="c-tabs__panel o-center-demo o-center-demo--absolute"
+                        role="tabpanel" aria-labelledby="tab-absolute">
+                        <div class="center-demo__box">I'm centered with absolute</div>
+                        <p class="o-center-demo__explain">Use <code>position:absolute;</code> + <code>top</code> +
+                            <code>left</code> + <code>transform</code> to center.</p>
+                    </section>
+                </div>
+
+            </section>
+        </section>
+        <section class="c-section">
+            <input type="checkbox" class="c-section__toggle-input" id="toggle-animations" hidden>
+            <label for="toggle-animations" class="c-section__header">
+                <span class="c-section__title">ANIMATIONS</span>
+            </label>
+            <section class="c-section__content">
+                <div class="o-animations-demo">
+                    <div class="o-animations-demo__box o-animations-demo__box--bounce">Bounce</div>
+                    <div class="o-animations-demo__box o-animations-demo__box--shake">Shake</div>
+                    <div class="o-animations-demo__box o-animations-demo__box--pulse">Pulse</div>
+                    <div class="o-animations-demo__box o-animations-demo__box--flash">Flash</div>
+                    <div class="o-animations-demo__box o-animations-demo__box--rubber-band">Rubber Band</div>
+                    <div class="o-animations-demo__box o-animations-demo__box--swing">Swing</div>
+                    <div class="o-animations-demo__box o-animations-demo__box--tada">Tada</div>
+                    <div class="o-animations-demo__box o-animations-demo__box--wobble">Wobble</div>
+                </div>
+            </section>
+        </section>
+        <section class="c-section">
+            <input type="checkbox" class="c-section__toggle-input" id="toggle-tables" hidden>
+            <label for="toggle-tables" class="c-section__header">
+                <span class="c-section__title">TABLES</span>
+            </label>
+        <section class="c-section__content">
+            <div class="c-tables-demo">
+                <div>
+                    TABLES
                 </div>
             </div>
-            <h3>Center with Grid</h3>
-            <div class="center center--grid">
-                <div class="center__box">I'm centered with Grid</div>
-            </div>
         </section>
-    </section>
-</main>
-<footer>
-Mariam Gevorgyan
-</footer>
+    </main>
+    <footer class="o-footer">
+        Mariam Gevorgyan
+    </footer>
 </body>
+
 </html>

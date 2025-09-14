@@ -1,0 +1,53 @@
+## 📂 Project Structure & Conventions
+
+This project follows the **ITCSS architecture** for organizing styles and the **BEM methology** for naming clases.
+
+<details>
+<summary>ITCSS (Inverted Triangle CSS)</summary>
+
+Styles are orgnised using ITCSS (Inverted Triangle CSS) method.
+This splits styles into layers, going from generic to specific.
+
+![inverted triangle](./assets/pics/it.png)  
+
+- **Settings** – variables, colors, fonts
+
+- **Tools** – mixins, functions
+
+- **Generic** – resets, normalize
+
+- **Elements** – base HTML elements (h1, p, a)
+
+- **Objects** – layout patterns (.o-page, .o-grid)
+
+- **Components** – UI blocks (.c-tabs, .c-section)
+
+- **Utilities** – helpers (.u-hidden, .u-text-center)
+
+This layered structure avoids conflicts and keeps code scalable.
+
+📖 dive in: [ITCSS Explained](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture)
+</details>
+<details>
+<summary> BEM (Block Element Modifier)
+</summary>
+Classes are named using the BEM convention
+
+- **Block** →  sandalone entity (.tab-panel)
+- **Element** → part of block (.tabs__tab)
+- **Mofifier** → variation od blocck/element (.tabs__tab--active) 
+
+📖 dive in: [BEM methology](https://getbem.com/introduction/):
+
+</details>
+
+<details>
+<summary> Combining ITCSS & BEM</summary>
+To keep things clear, use prefixes:
+
+- o → Objects (o-page,o-container)
+- c → Components( c-section,c-tabs)
+- u → Utilities (u-hidden)
+
+It can sometimes get confusing,what goes where...
+</details>

@@ -1,0 +1,40 @@
+@use "../settings/variables" as *;
+@mixin responsive-nav {
+    ul {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        padding: 0;
+        list-style: none;
+
+        li {
+            box-sizing: border-box;
+            border: 1px solid;
+            flex: 1 1 20em;
+            text-align: center;
+            margin: .5em;
+            padding: 0.5em;
+            transition: background 0.3s, border-color 0.3s;
+
+            &:hover {
+                background-color: $clr-accent;  
+                border-color: transparent;
+                a {
+                    transform: scale(1.2);
+                    color: #fff;
+                }
+            }
+
+            a {
+                display: block;
+                text-decoration: none;
+                transition: transform 0.3s ease, color 0.3s;
+                transform-origin: center;
+                color: inherit;
+                &:active {
+                    color: $clr-secondary;
+                }
+            }
+        }
+    }
+}

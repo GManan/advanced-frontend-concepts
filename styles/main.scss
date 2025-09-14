@@ -1,3 +1,10 @@
-@use "layout/_layout.scss";
-@use "components/sections.scss";
-@use "base/base.scss";
+@use "settings/variables" as *;
+@use "tools/mixins" as *;
+@use "generic/reset" as *;
+@use "elements/base" as *;
+@use "objects/page" as *;
+@use "objects/centering-techniques" as *;
+@use "components/center" as *;
+@use "components/sections" as *;
+@use "components/navbar" as *;
+@use "utilities/helpers" as *;

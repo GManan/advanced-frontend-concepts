@@ -1,23 +1,24 @@
-body{
-  border: solid #7bff00 10px ;
+.o-page{
+  border: solid #2adfd0 10px ;
   padding: 1em;
+  min-width: 50%;
   min-height: 100vh; //ensure full viewpoint height
   background-color: #ffffff;
   margin:0;
   display: flex;
   flex-direction: column;
 }
-header{
+.o-header{
   border: black solid 10px;
   padding: 1em;
 }
-main{
+.o-main{
   border: #144cb3 solid 10px;
   flex:1; // take remaning space between heaeder and footer
   padding: 1em;
 
 }
-footer{
+.o-footer{
   border: #ff0076 solid 10px;
   padding: 1em;
 
