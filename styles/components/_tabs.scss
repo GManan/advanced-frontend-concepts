@@ -46,7 +46,6 @@ input[name="center-tabs"] {
 
     & > * {
       flex-grow: 1;
-    //   max-width: 50%;
       height: $tabs-panel-height;
     }
 
@@ -66,6 +65,6 @@ input[name="center-tabs"] {
   }
 
   .c-tabs__panel--active > * {
-    width: 100%;
+    max-width: 100%;
   }
 }

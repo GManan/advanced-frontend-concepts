@@ -1,0 +1,91 @@
+@use "../settings/variables" as *;
+
+
+  /* Mobile stacked cards */
+@media (max-width: 768px) {
+    .c-styled-table thead {
+      display: none;
+    }
+
+    .c-styled-table tr {
+      display: block;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      padding: 1em;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .c-styled-table td {
+      display: block;
+      text-align: right;
+      padding-left: 40%;
+      position: relative;
+      border: none;
+      border-bottom: 1px solid #eee;
+    }
+
+    .c-styled-table td:before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0.5rem;
+      text-align: left;
+      font-weight: bold;
+      color: #555;
+    }
+  }
+
+
+
+  //SCroll table
+  .c-scroll-container {
+    overflow-x: auto;
+    margin-bottom: 2rem;
+  
+    // Custom scrollbar for Webkit browsers (Chrome, Safari, Edge)
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: #023821;
+      border-radius: 10px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: $clr-background;
+      border-radius: 10px;
+    }
+  
+    &::-webkit-scrollbar-thumb:hover {
+      background: #6732e2;
+    }
+  }
+
+
+  .c-scrollable-table {
+    min-width: 600px; // wider than screen to force scroll on smaller devices
+    border-collapse: collapse;
+    
+    th, td {
+      white-space: nowrap; // prevents text wrapping
+    }
+  }
+  th {
+    background-color: $clr-secondary;
+    color: #fff;
+  }
+    tbody tr:nth-child(even) {
+    background-color: $table-alternate-bg;
+  }
+  @media (max-width: 768px) {
+    .c-collapsible-table thead th:nth-child(2),
+    .c-collapsible-table tbody td:nth-child(2),
+    .c-collapsible-table thead th:nth-child(3),
+    .c-collapsible-table tbody td:nth-child(3) {
+      display: none;
+    }
+  }
+  
+  

@@ -1,5 +1,7 @@
+@use "../settings/variables" as *;
 
 @layer base {
+
   /* test layer: overwrites [role=list] reset layer */
   ul {
     list-style: circle;
@@ -8,12 +10,10 @@
 
   /* Custom Properties */
   :root {
-    --main-bg-color: hsl(0 0 90%);
-    --ff-basic: "Open Sans", Verdana, sans-serif;
 
     line-height: 1.6;
     font-size: 1rem;
-    font-family: var(--ff-basic);
+    font-family: $ff-basic;
     /* for quotation marks and the like, progressive enhancement, webkit only */
     hanging-punctuation: first last;
   }
@@ -38,49 +38,46 @@
 
   h3 {
     font-size: 1.3rem;
+    padding: $standard-padding 0;
+    margin-top: 1.3em;
   }
 
   article {
-    background: var(--main-bg-color);
-    font-family: var(--ff-basic);
-  }
-
-  /* Structured Variables 
-  move up to :root Selector,
-  same with font-size, border-radius, etc. */
-  :root {
-    /* primitives */
-    --clr-grey-300: hsl(0 0 30%);
-    --clr-grey-400: hsl(0 0 40%);
-    --clr-grey-500: hsl(0 0 50%);
-    --clr-grey-600: hsl(0 0 60%);
-    --clr-grey-700: hsl(0, 0%, 100%);
-    --clr-red-500: hsl(0 100% 50%);
-    --clr-blue-500: hsl(240 100% 50%);
-    --clr-green-500: hsl(167, 72%, 17%);
-    --clr-link-color: hsl(246, 23%, 9%);
-    --clr-main-bg: var(--clr-grey-700);
-    --clr-accent: var(--clr-red-500);
+    background: $main-bg-color;
+    font-family: $ff-basic;
   }
 
   p {
-    background: var(--clr-main-bg);
+    background: $clr-main-bg;
     padding: 5em;
   }
 
   a {
-    color: var(--clr-link-color);
+    color: $clr-link-color;
     text-decoration: none;
   }
 
   a:hover,
   a:focus-visible {
-    color: var(--clr-green-500);
+    color: $clr-green-500;
   }
 
   /* focus vs. focus-visible for tab,
   try both */
   button:focus-visible {
-    color: var(--clr-red-500);
+    color: $clr-red-500;
   }
+
+  table {
+    width: 100%;
+  }
+
+  td,
+  th {
+    box-sizing: border-box;
+    line-height: 1.5em;
+    padding: 1em;
+  }
+
+
 }

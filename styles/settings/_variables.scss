@@ -1,31 +1,33 @@
+    /* primitives */
+    $clr-grey-300: hsl(0 0 30%);
+    $clr-grey-400: hsl(0 0 40%);
+    $clr-grey-500: hsl(0 0 50%);
+    $clr-grey-600: hsl(0 0 60%);
+    $clr-grey-700: hsl(0, 0%, 100%);
+    $clr-red-500: hsl(0 100% 50%);
+    $clr-blue-500: hsl(240 100% 50%);
+    $clr-green-500: hsl(167, 72%, 17%);
+    $clr-link-color: hsl(246, 23%, 9%);
+    $clr-main-bg: var(--clr-grey-700);
+    $clr-accent: var(--clr-red-500);
+    $tabs-panel-height: 50vh;
+    $demo-box-container-length: 20rem;
+    $demo-box-container-color: hsl(327, 64%, 50%);
+    $demo-box-container-background-color: hsl(305, 49%, 97%);
+    $tabs-active-color: hsl(305, 49%, 99%);
+    $title-padding: 0.5em;
+    $standard-padding: 0.5em;
+    $standard-radius: 1em;
+    $section-border-color: $demo-box-container-color;
+    $panels-background-color: $demo-box-container-background-color;
+    $table-alternate-bg: hsl(210, 50%, 96%);
+    $main-bg-color: hsl(0 0 90%);
+    $ff-basic: "Open Sans", Verdana, sans-serif;
 
-$tabs-panel-height: 50vh;
-$demo-box-container-length: 20rem;
-$demo-box-container-color: hsl(327, 64%, 50%);
-$demo-box-container-background-color: hsl(305, 49%, 97%);
-$tabs-active-color: hsl(305, 49%, 99%);
-$title-padding: 0.5em;
-$standard-padding: 0.5em;
 
-$section-border-color: $demo-box-container-color;
-$panels-background-color: $demo-box-container-background-color;
-
-// $clr-text: hsl(252, 19%, 5%);
-// $clr-background: hsl(255, 22%, 96%);
-// $clr-primary: hsl(253, 20%, 52%);
-// $clr-secondary: hsl(298, 20%, 73%);
-// $clr-accent: hsl(313, 21%, 60%);
-
-// $clr-text: hsl(330, 11%, 4%);
-// $clr-background: hsl(340, 16%, 96%);
-// $clr-primary: hsl(342, 15%, 53%);
-// $clr-secondary: hsl(147, 15%, 74%);
-// $clr-accent: hsl(208, 15%, 61%);
-
-
-$clr-text: hsl(116, 74%, 5%);
-$clr-text-on-accent: hsl(0, 0%, 100%);
-$clr-background: hsl(115, 76%, 97%);
-$clr-primary: hsl(116, 74%, 50%);
-$clr-secondary: hsl(270, 74%, 73%);
-$clr-accent: hsl(322, 74%, 62%);
+    $clr-text: hsl(116, 74%, 5%);
+    $clr-text-on-accent: hsl(0, 0%, 100%);
+    $clr-background: hsl(115, 76%, 97%);
+    $clr-primary: hsl(116, 74%, 50%);
+    $clr-secondary: hsl(270, 74%, 73%);
+    $clr-accent: hsl(322, 74%, 62%);

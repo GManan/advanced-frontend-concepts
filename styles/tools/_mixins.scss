@@ -1,5 +1,12 @@
 @use "../settings/variables" as *;
 @use "../tools/animations" as *;
+
+@mixin bordered-box($color, $radius: 0.3em, $padding: 1em) {
+  border: 1px solid $color;
+  border-radius: $radius;
+  padding: $padding;
+  box-sizing: border-box;
+}
 @mixin tab-hover {
     animation:  0.3s ease forwards;
     color: $clr-accent;

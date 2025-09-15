@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* primitives */
 @keyframes anticipate-scale {
   0% {
     transform: scale(1);
@@ -95,11 +96,9 @@
   }
   /* Custom Properties */
   :root {
-    --main-bg-color: hsl(0 0 90%);
-    --ff-basic: "Open Sans", Verdana, sans-serif;
     line-height: 1.6;
     font-size: 1rem;
-    font-family: var(--ff-basic);
+    font-family: "Open Sans", Verdana, sans-serif;
     /* for quotation marks and the like, progressive enhancement, webkit only */
     hanging-punctuation: first last;
   }
@@ -120,44 +119,38 @@
   }
   h3 {
     font-size: 1.3rem;
+    padding: 0.5em 0;
+    margin-top: 1.3em;
   }
   article {
-    background: var(--main-bg-color);
-    font-family: var(--ff-basic);
-  }
-  /* Structured Variables 
-  move up to :root Selector,
-  same with font-size, border-radius, etc. */
-  :root {
-    /* primitives */
-    --clr-grey-300: hsl(0 0 30%);
-    --clr-grey-400: hsl(0 0 40%);
-    --clr-grey-500: hsl(0 0 50%);
-    --clr-grey-600: hsl(0 0 60%);
-    --clr-grey-700: hsl(0, 0%, 100%);
-    --clr-red-500: hsl(0 100% 50%);
-    --clr-blue-500: hsl(240 100% 50%);
-    --clr-green-500: hsl(167, 72%, 17%);
-    --clr-link-color: hsl(246, 23%, 9%);
-    --clr-main-bg: var(--clr-grey-700);
-    --clr-accent: var(--clr-red-500);
+    background: hsl(0, 0%, 90%);
+    font-family: "Open Sans", Verdana, sans-serif;
   }
   p {
-    background: var(--clr-main-bg);
+    background: var(--clr-grey-700);
     padding: 5em;
   }
   a {
-    color: var(--clr-link-color);
+    color: hsl(246, 23%, 9%);
     text-decoration: none;
   }
   a:hover,
   a:focus-visible {
-    color: var(--clr-green-500);
+    color: hsl(167, 72%, 17%);
   }
   /* focus vs. focus-visible for tab,
   try both */
   button:focus-visible {
-    color: var(--clr-red-500);
+    color: hsl(0, 100%, 50%);
+  }
+  table {
+    width: 100%;
+  }
+  td,
+  th {
+    box-sizing: border-box;
+    line-height: 1.5em;
+    padding: 1em;
   }
 }
 .o-page {
@@ -346,7 +339,82 @@ input[name=center-tabs] {
     flex-direction: column;
   }
   .c-tabs__panel--active > * {
-    width: 100%;
+    max-width: 100%;
+  }
+}
+/* Mobile stacked cards */
+@media (max-width: 768px) {
+  .c-styled-table thead {
+    display: none;
+  }
+  .c-styled-table tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    padding: 1em;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  .c-styled-table td {
+    display: block;
+    text-align: right;
+    padding-left: 40%;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+  .c-styled-table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0.5rem;
+    text-align: left;
+    font-weight: bold;
+    color: #555;
+  }
+}
+.c-scroll-container {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+.c-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+.c-scroll-container::-webkit-scrollbar-track {
+  background: #023821;
+  border-radius: 10px;
+}
+.c-scroll-container::-webkit-scrollbar-thumb {
+  background: hsl(115, 76%, 97%);
+  border-radius: 10px;
+}
+.c-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #6732e2;
+}
+
+.c-scrollable-table {
+  min-width: 600px;
+  border-collapse: collapse;
+}
+.c-scrollable-table th, .c-scrollable-table td {
+  white-space: nowrap;
+}
+
+th {
+  background-color: hsl(270, 74%, 73%);
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: hsl(210, 50%, 96%);
+}
+
+@media (max-width: 768px) {
+  .c-collapsible-table thead th:nth-child(2),
+  .c-collapsible-table tbody td:nth-child(2),
+  .c-collapsible-table thead th:nth-child(3),
+  .c-collapsible-table tbody td:nth-child(3) {
+    display: none;
   }
 }
 
