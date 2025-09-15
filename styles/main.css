@@ -197,6 +197,7 @@
 }
 
 .o-center-demo__box-container {
+  position: relative;
   border: 1px solid hsl(327, 64%, 50%);
   border-radius: 0.3em;
   height: 20rem;
@@ -228,7 +229,6 @@
   transform: translate(-50%, -50%);
 }
 .o-center-demo--absolute {
-  background-color: blue;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -319,7 +319,7 @@ input[name=center-tabs] {
   border-bottom: none;
 }
 .c-tabs__panels {
-  position: relative;
+  position: flex;
   border: 1px solid hsl(322, 74%, 62%);
   border-top-left-radius: 0;
   border-top-right-radius: 0;

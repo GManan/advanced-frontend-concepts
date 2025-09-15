@@ -37,7 +37,7 @@ input[name="center-tabs"] {
     }
 
     &__panels {
-        position: relative;
+        position: flex;
         border: 1px solid $clr-accent;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
