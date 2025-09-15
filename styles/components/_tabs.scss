@@ -16,8 +16,9 @@ input[name="center-tabs"] {
         // padding: $standard-padding;
         // border: 1px solid $clr-accent;
     }
-    
+
     &__label {
+        // box-sizing: border-box;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         border-bottom: none;
@@ -27,13 +28,14 @@ input[name="center-tabs"] {
         flex: 1;
         text-align: center;
 
-        &--active, &:hover {
-            background-color: $clr-secondary;
+        &--active,
+        &:hover {
+            background-color: $tabs-active-color;
             border-bottom: none;
         }
-    
+
     }
-    
+
     &__panels {
         position: relative;
         border: 1px solid $clr-accent;
@@ -43,30 +45,37 @@ input[name="center-tabs"] {
         // border: none;
         // margin-top: 0.5em;
         padding: $standard-padding;
-        background-color: $clr-secondary;
-     
+        background-color: $panels-background-color;
+
     }
+
     &__panel {
         display: none;
-        // display: block;
-        // visibility: hidden;
-        // opacity: 0;
-        // position: absolute;
-        // top: 0;
-        // left: 0;
-        // width: 100%;
-        // transition: opacity 0.3s ease;
+        // display: flex;
+        // border: solid 0.2em #15f00d;
+        margin-bottom: 1em;
+
+        &>* {
+            // border: 4px solid yellow;
+            flex-grow: 1;
+            max-width: 50%;
+            height: $tabs-panel-height;
+            
+        }
 
         &--active {
-            display: block;
+            // display: block;
             // visibility: visible;
+            display: flex;
+            // flex: 1;
+            // align-items: center;
             // opacity: 1;
             // position: static;
         }
     }
-    
 
-    
+
+
 }
 
 // input[type="radio"]:checked + .c-tabs__label {

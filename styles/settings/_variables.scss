@@ -1,9 +1,14 @@
-// $clr-primary: hsl(180 70% 35%);
-// $clr-secondary: hsl(0 0% 50%);
-// $clr-accent: hsl(99, 79%, 15%);
-// $clr-background: hsl(0 0% 95);
+
+$tabs-panel-height: 50vh;
+$demo-box-container-length: 20rem;
+$demo-box-container-color: hsl(327, 64%, 50%);
+$demo-box-container-background-color: hsl(305, 49%, 97%);
+$tabs-active-color: hsl(305, 49%, 99%);
 $title-padding: 0.5em;
 $standard-padding: 0.5em;
+
+$section-border-color: $demo-box-container-color;
+$panels-background-color: $demo-box-container-background-color;
 
 // $clr-text: hsl(252, 19%, 5%);
 // $clr-background: hsl(255, 22%, 96%);

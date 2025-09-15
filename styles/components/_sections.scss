@@ -2,34 +2,35 @@
 
 .c-section {
   box-sizing: border-box;
-margin: 0.5em 0;
+  margin: 0.5em 0;
+
   &__toggle-input:checked~.c-section__content {
     max-height: 10000px;
     padding: $standard-padding;
   }
 
   // background-color: #ce00ff;
-  border:solid 0.2em #ff6800;
-}
+  border:solid 0.2em $section-border-color;
 
-.c-section__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  padding: 0.3em;
-}
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.3em;
+  }
 
-.c-section__title {
-  font-weight: bold;
-  font-size: 1.2em;
-  padding: $title-padding;
-}
+  &__title {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: $title-padding;
+  }
 
-.c-section__content {
-  box-sizing: border-box;
-  max-height: 0;
-  padding: 0;
-  overflow: hidden;
-  transition: max-height 0.8s ease-in-out, padding 1.8s ease;
+  &__content {
+    box-sizing: border-box;
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease-in-out, padding 1.8s ease;
+  }
 }

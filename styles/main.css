@@ -196,19 +196,54 @@
   padding: 0.5em;
 }
 
-.center {
-  border: green 10px solid;
+.o-center-demo__box-container {
+  border: 1px solid hsl(327, 64%, 50%);
+  border-radius: 0.3em;
+  height: 20rem;
+  width: 20rem;
+  background-color: hsl(305, 49%, 97%);
 }
+.o-center-demo__box {
+  border: solid 0.2em hsl(327, 64%, 50%);
+  width: 25vh;
+  height: 25vh;
+  background-color: hsl(327, 64%, 50%);
+  color: hsl(305, 49%, 97%);
+  align-content: center;
+  text-align: center;
+}
+.o-center-demo--flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.o-center-demo--grid {
+  display: grid;
+  place-items: center;
+}
+.o-center-demo--relative {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.o-center-demo--absolute {
+  background-color: blue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .c-section {
   box-sizing: border-box;
   margin: 0.5em 0;
-  border: solid 0.2em #ff6800;
+  border: solid 0.2em hsl(327, 64%, 50%);
 }
 .c-section__toggle-input:checked ~ .c-section__content {
   max-height: 10000px;
   padding: 0.5em;
 }
-
 .c-section__header {
   display: flex;
   justify-content: space-between;
@@ -216,13 +251,11 @@
   cursor: pointer;
   padding: 0.3em;
 }
-
 .c-section__title {
   font-weight: bold;
   font-size: 1.2em;
   padding: 0.5em;
 }
-
 .c-section__content {
   box-sizing: border-box;
   max-height: 0;
@@ -282,7 +315,7 @@ input[name=center-tabs] {
   text-align: center;
 }
 .c-tabs__label--active, .c-tabs__label:hover {
-  background-color: hsl(270, 74%, 73%);
+  background-color: hsl(305, 49%, 99%);
   border-bottom: none;
 }
 .c-tabs__panels {
@@ -292,13 +325,19 @@ input[name=center-tabs] {
   border-top-right-radius: 0;
   border-top: none;
   padding: 0.5em;
-  background-color: hsl(270, 74%, 73%);
+  background-color: hsl(305, 49%, 97%);
 }
 .c-tabs__panel {
   display: none;
+  margin-bottom: 1em;
+}
+.c-tabs__panel > * {
+  flex-grow: 1;
+  max-width: 50%;
+  height: 50vh;
 }
 .c-tabs__panel--active {
-  display: block;
+  display: flex;
 }
 
 /*# sourceMappingURL=main.css.map */

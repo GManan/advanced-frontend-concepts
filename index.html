@@ -14,69 +14,92 @@
         <h2>Don't be scared of CSS</h2>
         <nav class="c-navbar">
             <ul>
-                <li> <a href="#toggle-center">Center that div</a></li>
-                <li> <a href="#toggle-animations">Animations</a></li>
-                <li> <a href="#toggle-tables">Tables</a></li>
-                <li> <a href="#toggle-tables">Form</a></li>
+                <li><a href="#toggle-center">Center that div</a></li>
+                <li><a href="#toggle-animations">Animations</a></li>
+                <li><a href="#toggle-tables">Tables</a></li>
+                <li><a href="#toggle-form">Form</a></li>
             </ul>
         </nav>
     </header>
+
     <main class="o-main">
+
+        <!-- CENTER SECTION -->
         <section class="c-section">
             <input type="checkbox" class="c-section__toggle-input" id="toggle-center" hidden>
             <label for="toggle-center" class="c-section__header">
                 <span class="c-section__title">CENTER THAT DIV</span>
             </label>
-            <section class="c-section__content c-tabs" aria-label="Centering techniques">
 
-                <!-- <div class="c-tabs__labels" role="tablist" >
-                    <input type="radio" id="tab-flex" name="center-tabs" checked>
-                    <label for="tab-flex" role="tab" class="c-tabs__label" >flexbox</label>
-                    <input type="radio" id="tab-grid" name="center-tabs">
-                    <label for="tab-grid" role="tab" class="c-tabs__label">grid</label>
-                    <input type="radio" id="tab-relative" name="center-tabs">
-                    <label for="tab-relative" role="tab" class="c-tabs__label">relative</label>
-                    <input type="radio" id="tab-absolute" name="center-tabs" >
-                    <label for="tab-absolute" role="tab" class="c-tabs__label">absolute</label>
-                </div> -->
+            <section class="c-section__content c-tabs" aria-label="Centering techniques">
                 <div class="c-tabs__labels" role="tablist">
-                    <button data-tab="panel-flex" class="c-tabs__label c-tabs__label--active"> flexbox</button>
-                    <button data-tab="panel-grid" class="c-tabs__label"> grid</button>
-                    <button data-tab="panel-relative" class="c-tabs__label"> relative</button>
-                    <button data-tab="panel-absolute" class="c-tabs__label"> absolute</button>
+                    <button data-tab="panel-flex" class="c-tabs__label c-tabs__label--active"
+                        id="tab-flex">flexbox</button>
+                    <button data-tab="panel-grid" class="c-tabs__label" id="tab-grid">grid</button>
+                    <button data-tab="panel-relative" class="c-tabs__label" id="tab-relative">relative</button>
+                    <button data-tab="panel-absolute" class="c-tabs__label" id="tab-absolute">absolute</button>
                 </div>
 
                 <div class="c-tabs__panels">
-                    <section id="panel-flex" class="c-tabs__panel c-tabs__panel--active o-center-demo o-center-demo--flex"
-                        role="tabpanel" aria-labelledby="tab-flex">
-                        <div class="o-center-demo__box">I'm centered with flexbox</div>
-                        <p class="o-center-demo__explain">Use <code>display:flex;</code> + <code>justify-content</code>
-                            + <code>align-items</code> to center horizontally and vertically.</p>
-                    </section>
-                    <section id="panel-grid" class="c-tabs__panel  o-center-demo o-center-demo--grid" role="tabpanel"
-                        aria-labelledby="tab-grid">
-                        <div class="center-demo__box">I'm centered with grid</div>
-                        <p class="o-center-demo__explain">Use <code>display:grid;</code> +
-                            <code>place-items:center;</code> to center horizontally and vertically.
+                    <section id="panel-flex" class="c-tabs__panel c-tabs__panel--active" role="tabpanel"
+                        aria-labelledby="tab-flex">
+                        <div class="o-center-demo__box-container o-center-demo--flex">
+                            <div class="o-center-demo__box">I'm centered with FLEXBOX</div>
+                        </div>
+                        <p class="codepen" data-height="100%" data-default-tab="css,result" data-theme-id="light"
+                            data-slug-hash="MYaNmKm" data-pen-title="DivCenterFlex" data-user="GManan"
+                            style="box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                            <span>See the Pen <a href="https://codepen.io/GManan/pen/MYaNmKm">
+                                    DivCenterFlex</a> by Mariam (<a href="https://codepen.io/GManan">@GManan</a>)
+                                on <a href="https://codepen.io">CodePen</a>.</span>
                         </p>
+                        <script async src="https://public.codepenassets.com/embed/index.js"></script>
                     </section>
-                    <section id="panel-relative" class="c-tabs__panel o-center-demo o-center-demo--relative"
-                        role="tabpanel" aria-labelledby="tab-relative">
-                        <div class="center-demo__box">I'm centered with relative</div>
-                        <p class="o-center-demo__explain">Use <code>position:relative;</code> + <code>top</code> +
-                            <code>left</code> + <code>transform</code> to center.
-                        </p>
+                    <section id="panel-grid" class="c-tabs__panel" role="tabpanel" aria-labelledby="tab-grid">
+                        <div class="o-center-demo__box-container o-center-demo--grid">
+                            <div class="o-center-demo__box">I'm centered with GRID</div>
+                        </div>
+                        <iframe height="300" style="width: 100%;" scrolling="no" title="DivCenterGrid"
+                            src="https://codepen.io/GManan/embed/QwjeMoj?default-tab=css%2Cresult&theme-id=light"
+                            frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/GManan/pen/QwjeMoj">
+                                DivCenterGrid</a> by Mariam (<a href="https://codepen.io/GManan">@GManan</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
                     </section>
-                    <section id="panel-absolute" class="c-tabs__panel o-center-demo o-center-demo--absolute"
-                        role="tabpanel" aria-labelledby="tab-absolute">
-                        <div class="center-demo__box">I'm centered with absolute</div>
-                        <p class="o-center-demo__explain">Use <code>position:absolute;</code> + <code>top</code> +
-                            <code>left</code> + <code>transform</code> to center.
-                        </p>
+
+                    <section id="panel-relative" class="c-tabs__panel" role="tabpanel" aria-labelledby="tab-relative">
+                        <div class="o-center-demo__box-container ">
+                            <div class="o-center-demo__box o-center-demo--relative">I'm centered with RELATIVE POSITIONING</div>
+                        </div>
+                        <pre class="o-center-demo__code"><code>
+.o-center-demo--relative {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+                        </code></pre>
+                    </section>
+
+                    <section id="panel-absolute" class="c-tabs__panel" role="tabpanel" aria-labelledby="tab-absolute">
+                        <div class="o-center-demo__box-container ">
+                            <div class="o-center-demo__box o-center-demo--absolute">I'm centered with absolute</div>
+                        </div>
+                        <pre class="o-center-demo__code"><code>
+.o-center-demo--absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+                        </code></pre>
                     </section>
                 </div>
             </section>
         </section>
+
+        <!-- ANIMATIONS SECTION -->
         <section class="c-section">
             <input type="checkbox" class="c-section__toggle-input" id="toggle-animations" hidden>
             <label for="toggle-animations" class="c-section__header">
@@ -95,46 +118,47 @@
                 </div>
             </section>
         </section>
-        <section class="c-section">
+
+        <!-- TABLES SECTION -->
+        <div class="c-section">
             <input type="checkbox" class="c-section__toggle-input" id="toggle-tables" hidden>
             <label for="toggle-tables" class="c-section__header">
                 <span class="c-section__title">TABLES</span>
             </label>
-            <section class="c-section__content">
+            <div class="c-section__content">
                 <div class="c-tables-demo">
-                    <div>
-                        TABLES
-                    </div>
+                    <div>TABLES</div>
                 </div>
-            </section>
-        </section>
-        <section class="c-section">
+            </div>
+        </div>
+
+        <!-- FORM SECTION -->
+        <div class="c-section">
             <input type="checkbox" class="c-section__toggle-input" id="toggle-form" hidden>
             <label for="toggle-form" class="c-section__header">
                 <span class="c-section__title">FORM</span>
             </label>
-            <section class="c-section__content">
-                <div class="c-tables-demo">
-                    <div>
-                        FORM
-                    </div>
+            <div class="c-section__content">
+                <div class="c-form-demo">
+                    <div>FORM</div>
                 </div>
-            </section>
+            </div>
+        </div>
     </main>
+
     <footer class="o-footer">
+        <p>FWFT: Mariam Gevorgyan</p>
         <p>
-            FWFT: Mariam Gevorgyan
-        </p>
-        <p>
-            <svg height="24" width="24" viewBox="0 0 16 16" >
+            <svg height="24" width="24" viewBox="0 0 16 16">
                 <path
-                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
             </svg>
             <a href="https://github.com/GManan/advanced-frontend-concepts.git" target="_blank">
                 View on GitHub
             </a>
         </p>
     </footer>
+
     <script src="scripts/tabs.js" defer></script>
 </body>
 
