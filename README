@@ -1,3 +1,19 @@
+## ☝🏼The Point
+This Project is supposed to be a base for anyone who played with css and gets frustrated.
+
+I am showing best practices(i hope),when it comes to structuring,orgnising and maintaining  a fronent Project.Showing main pain points, like
+- the classic **Centering a div**
+- different teqniques of making **tables** on smaller screens bareble
+- some **animations**
+- a **small form**(not too exciting)
+
+I laid the foundation and am hopping to have time and interrest to keep on improving and growing it.
+
+...anyway. lets start: what is going on here?
+
+# Guidlines 
+This is uni project, so i will use the official requirment list to help find your way better around here.
+
 ## 📂 Project Structure & Conventions
 
 This project follows the **ITCSS architecture** for organizing styles and the **BEM methology** for naming clases.
@@ -49,5 +65,6 @@ To keep things clear, use prefixes:
 - c → Components( c-section,c-tabs)
 - u → Utilities (u-hidden)
 
-It can sometimes get confusing,what goes where...
+It can sometimes get confusing, what goes where, so good luck...
 </details>
+

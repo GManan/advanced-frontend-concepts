@@ -145,6 +145,7 @@
   }
   table {
     width: 100%;
+    table-layout: fixed;
   }
   td,
   th {
@@ -397,7 +398,7 @@ input[name=center-tabs] {
   border-collapse: collapse;
 }
 .c-scrollable-table th, .c-scrollable-table td {
-  white-space: nowrap;
+  white-space: wrap;
 }
 
 th {

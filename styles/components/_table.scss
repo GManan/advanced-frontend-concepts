@@ -69,7 +69,7 @@
     border-collapse: collapse;
     
     th, td {
-      white-space: nowrap; // prevents text wrapping
+      white-space: wrap; // prevents text wrapping
     }
   }
   th {
