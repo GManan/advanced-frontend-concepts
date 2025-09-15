@@ -9,7 +9,7 @@
   /* Custom Properties */
   :root {
     --main-bg-color: hsl(0 0 90%);
-    --ff-basic: Verdana;
+    --ff-basic: "Open Sans", Verdana, sans-serif;
 
     line-height: 1.6;
     font-size: 1rem;
@@ -54,10 +54,10 @@
     --clr-grey-400: hsl(0 0 40%);
     --clr-grey-500: hsl(0 0 50%);
     --clr-grey-600: hsl(0 0 60%);
-    --clr-grey-700: hsl(0, 8%, 90%);
+    --clr-grey-700: hsl(0, 0%, 100%);
     --clr-red-500: hsl(0 100% 50%);
     --clr-blue-500: hsl(240 100% 50%);
-    --clr-green-500: hsl(236, 52%, 94%);
+    --clr-green-500: hsl(167, 72%, 17%);
     --clr-link-color: hsl(246, 23%, 9%);
     --clr-main-bg: var(--clr-grey-700);
     --clr-accent: var(--clr-red-500);
@@ -70,6 +70,7 @@
 
   a {
     color: var(--clr-link-color);
+    text-decoration: none;
   }
 
   a:hover,
