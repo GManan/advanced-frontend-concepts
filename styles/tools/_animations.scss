@@ -1,6 +1,5 @@
 @use "../settings/variables" as *;
-
-
+// @use "../tools/mixins" as *;
 
 
 @keyframes anticipate-scale {
@@ -124,7 +123,7 @@
 
 // FOLLOW THROUGH AND OVERLAPPING ACTION
 .ball-follow-through {
-    
+
     animation: follow-through 4s ease infinite;
     will-change: transform;
 }
@@ -176,21 +175,58 @@
         offset-distance: 0%;
         transform: scale(1, 1);
     }
+
     50% {
         offset-distance: 100%;
         transform: scale(1, 1);
     }
+
     // normal while traveling
 
     60% {
-        transform:  scale(0.9, 1.1); // stretch after bounce
+        transform: scale(0.9, 1.1); // stretch after bounce
     }
 
     80% {
-        transform:  scale(1.05, 0.95); // easing upward
+        transform: scale(1.05, 0.95); // easing upward
     }
 
     90% {
         transform: translateY(60) scale(1, 1); // back to start
     }
+}
+
+// ======================
+// Non-resolution query (prefers-reduced-motion)
+// ======================
+@media (prefers-reduced-motion: reduce) {
+
+    .ball,
+    .ball-anticipation,
+    .ball-squish-and-stretch,
+    .ball-follow-through,
+    .ball-arc {
+        animation: none !important;
+    }
+}
+
+//STYLES for JS ANIMATION demo
+.js-animation-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: $tabs-panel-height;
+    height: $tabs-panel-height;
+    margin: 2rem auto;
+    border: 1px solid #ccc; // optional minimal border for reference
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#start-bounce {
+    position: absolute;
+    left: 100%;
+    transform: translateX(-100%);
+    // align-self: center;
+    // background-color: aqua;
 }

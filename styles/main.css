@@ -147,6 +147,33 @@
     transform: translateY(60) scale(1, 1);
   }
 }
+@media (prefers-reduced-motion: reduce) {
+  .ball,
+  .ball-anticipation,
+  .ball-squish-and-stretch,
+  .ball-follow-through,
+  .ball-arc {
+    animation: none !important;
+  }
+}
+.js-animation-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 50vh;
+  height: 50vh;
+  margin: 2rem auto;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#start-bounce {
+  position: absolute;
+  left: 100%;
+  transform: translateX(-100%);
+}
+
 @layer reset {
   *,
   *::after,
