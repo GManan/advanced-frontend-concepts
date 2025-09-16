@@ -1,12 +1,20 @@
 @use "../settings/variables" as *;
 @use "../tools/animations" as *;
+@mixin button-primary {
+  background-color: $clr-primary;
+  color: #fff;
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
 
-@mixin bordered-box($color, $radius: 0.3em, $padding: 1em) {
-  border: 1px solid $color;
-  border-radius: $radius;
-  padding: $padding;
-  box-sizing: border-box;
+  &:hover {
+    background-color: darken($clr-primary, 10%);
+  }
 }
+
 @mixin tab-hover {
     animation:  0.3s ease forwards;
     color: $clr-accent;

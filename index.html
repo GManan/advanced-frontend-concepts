@@ -153,7 +153,8 @@
                                 <td data-label="Concept">Grid</td>
                                 <td data-label="Description">Two-dimensional layout system</td>
                                 <td data-label="Code">
-                                    <code>display: grid;<br>grid-template-columns: repeat(3, 1fr);</code></td>
+                                    <code>display: grid;<br>grid-template-columns: repeat(3, 1fr);</code>
+                                </td>
                                 <td data-label="Dive In"><a
                                         href="https://css-tricks.com/snippets/css/complete-guide-grid/"
                                         target="_blank">Master Grid</a></td>
@@ -261,17 +262,36 @@
         </div>
 
         <!-- FORM SECTION -->
-        <div class="c-section">
+        <section class="c-section">
             <input type="checkbox" class="c-section__toggle-input" id="toggle-form" hidden>
             <label for="toggle-form" class="c-section__header">
-                <span class="c-section__title">FORM</span>
+                <span class="c-section__title">CONTACT FORM</span>
             </label>
             <div class="c-section__content">
-                <div class="c-form-demo">
-                    <div>FORM</div>
-                </div>
+                <form id="contact-form" class="c-form-demo" novalidate>
+                    <div class="c-form-demo__field">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <div class="c-form-demo__message" aria-live="polite"></div>
+                    </div>
+
+                    <div class="c-form-demo__field">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="c-form-demo__message" aria-live="polite"></div>
+                    </div>
+
+                    <div class="c-form-demo__field">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                        <div class="c-form-demo__message" aria-live="polite"></div>
+                    </div>
+
+                    <button type="submit">Send</button>
+                    <div class="c-form-demo__status" aria-live="polite"></div>               
+                </form>
             </div>
-        </div>
+        </section>
     </main>
 
     <footer class="o-footer">
@@ -288,6 +308,7 @@
     </footer>
 
     <script src="scripts/tabs.js" defer></script>
+    <script src="scripts/form-validation.js" defer></script>
 </body>
 
 </html>

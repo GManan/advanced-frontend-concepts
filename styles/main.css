@@ -418,5 +418,84 @@ tbody tr:nth-child(even) {
     display: none;
   }
 }
+.c-form-demo {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 2em;
+}
+.c-form-demo__field {
+  display: flex;
+  flex-direction: column;
+}
+.c-form-demo__field label {
+  margin-bottom: 0.3em;
+  font-weight: bold;
+}
+.c-form-demo__field input, .c-form-demo__field textarea {
+  border: 1px solid hsl(322, 74%, 62%);
+  border-radius: 0.4em;
+  padding: 0.6em;
+  font-size: 1em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.c-form-demo__field input:focus, .c-form-demo__field textarea:focus {
+  border-color: hsl(116, 74%, 50%);
+  box-shadow: 0 0 0 3px rgba(45.73, 221.85, 33.15, 0.2);
+  outline: none;
+}
+.c-form-demo__field__message {
+  color: hsl(0, 74%, 62%);
+  font-size: 0.9em;
+  margin-top: 0.3em;
+  min-height: 1em;
+}
+.c-form-demo__submit {
+  background-color: hsl(116, 74%, 50%);
+  color: #fff;
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  align-self: flex-start;
+}
+.c-form-demo__submit:hover {
+  background-color: hsl(116, 74%, 40%);
+}
+.c-form-demo__status {
+  margin-top: 1em;
+  font-weight: bold;
+  min-height: 1.5em;
+}
+
+button {
+  background-color: hsl(116, 74%, 50%);
+  color: #fff;
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-top: 1em;
+  align-self: flex-start;
+  cursor: pointer;
+}
+button:hover {
+  background-color: hsl(116, 74%, 40%);
+}
+button:hover {
+  background-color: hsl(116, 74%, 40%);
+}
+
+@media (max-width: 480px) {
+  .c-form-demo {
+    padding: 1em;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

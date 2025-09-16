@@ -1,0 +1,72 @@
+// _forms.scss
+
+@use "../settings/variables" as *;
+@use "../tools/mixins" as mixins;
+
+.c-form-demo {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+    padding: 2em;
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    
+    label {
+      margin-bottom: 0.3em;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      border: 1px solid $clr-accent;
+      border-radius: 0.4em;
+      padding: 0.6em;
+      font-size: 1em;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      
+      &:focus {
+        border-color: $clr-primary;
+        box-shadow: 0 0 0 3px rgba($clr-primary, 0.2);
+        outline: none;
+      }
+    }
+
+    &__message {
+      color: $clr-error;
+      font-size: 0.9em;
+      margin-top: 0.3em;
+      min-height: 1em;
+    }
+  }
+
+  &__submit {
+    @include mixins.button-primary; 
+    align-self: flex-start;
+  }
+
+  &__status {
+    margin-top: 1em;
+    font-weight: bold;
+    min-height: 1.5em;
+  }
+}
+button {
+  @include mixins.button-primary;
+  margin-top: 1em;
+  align-self: flex-start;
+  cursor: pointer;
+
+  &:hover {
+    // @include mixins.button-hover;
+    background-color: darken($clr-primary, 10%);
+  }
+}
+// Responsive tweaks
+@media (max-width: 480px) {
+  .c-form-demo {
+    padding: 1em;
+  }
+}
