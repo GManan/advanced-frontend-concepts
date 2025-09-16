@@ -1,6 +1,12 @@
 @use "../settings/variables" as *;
 // @use "../tools/mixins" as *;
+//HEADER ANIMATIONS
 
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
 @keyframes anticipate-scale {
     0% {
@@ -227,6 +233,4 @@
     position: absolute;
     left: 100%;
     transform: translateX(-100%);
-    // align-self: center;
-    // background-color: aqua;
 }

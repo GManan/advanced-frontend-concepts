@@ -55,6 +55,7 @@ h1, h2, h3, h4, h5 {
   font-weight: 700;
 }
 
+
 html {font-size: 100%;} /* 16px */
 
 h1 {font-size: 4.210rem; /* 67.36px */}
@@ -70,13 +71,10 @@ h5 {font-size: 1.333rem; /* 21.28px */}
 small {font-size: 0.750rem; /* 12px */}
 largerH1 {font-size: 5.210rem; /* 83.36px */} 
 
-  article {
-    background: $clr-background;
-    // font-family: $ff-basic;
-  }
+
 
   p {
-    background: $clr-background;
+    // background: $clr-background;
     padding: 5em;
   }
 

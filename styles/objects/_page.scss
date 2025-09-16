@@ -1,33 +1,49 @@
 @use "../settings/variables" as *; //import variables
+@use "../tools/animations" as *; //import animations
 
 .o-page {
-  border: solid #2adfd0 10px;
   padding: 1em;
   min-width: 50%;
   min-height: 100vh; //ensure full viewpoint height
-  background-color: #ffffff;
   margin: 0;
   display: flex;
   flex-direction: column;
+
 }
 
 .o-header {
-  // border: black solid 10px;
-  padding: 1em;
+  z-index: 10;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 7vh;
+
+  &__text {
+    @container (max-width: 600px) {
+      font-size: 0.5em;
+    }
+
+    @container (max-width: 400px) {
+      font-size: 1.1rem;
+    }
+  }
 }
 
 .o-main {
-  // border: #144cb3 solid 10px;
   flex: 1; // take remaning space between heaeder and footer
-  padding: 1em;
+
 
 }
 
 .o-footer {
+  // background: $clr-linearPrimarySecondary;
+
   display: flex;
   justify-content: space-around;
   align-items: right;
   width: 100%;
+
   & p {
     display: flex;
     flex: 1;

@@ -5,7 +5,10 @@
   margin: 0.5em 0;
   background-color: $clr-background;
   border: solid 0.2em $clr-secondary;
-
+  scroll-margin-top: $header-height-standard
+  h4{
+    padding: $standard-padding;
+  }
   &__header {
     display: flex;
     justify-content: space-between;
@@ -16,7 +19,7 @@
 
   &__title {
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: $font-size-xxl;
     padding: $title-padding;
   }
 

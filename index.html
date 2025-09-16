@@ -15,15 +15,19 @@
 </head>
 
 <body class="o-page">
-    <header class="o-header">
+    <header class="o-header o-header--large">
+         <!-- floating blobs -->
+  <div class="blob blob--1"></div>
+  <div class="blob blob--2"></div>
+  <div class="blob blob--3"></div>
         <!-- <h1>SEMESTER PROJECT</h1> -->
-        <h1>Don't be scared of CSS</h1>
+        <h1 class="o-header__text">Don't be scared of CSS</h1>
         <nav class="c-navbar">
             <ul>
-                <li><a href="#toggle-center">Center that div</a></li>
-                <li><a href="#toggle-animations">Animations</a></li>
-                <li><a href="#toggle-tables">Tables</a></li>
-                <li><a href="#toggle-form">Form</a></li>
+                <li><a href="#section-center">Center that div</a></li>
+                <li><a href="#section-animations">Animations</a></li>
+                <li><a href="#section-tables">Tables</a></li>
+                <li><a href="#section-form">Form</a></li>
             </ul>
         </nav>
     </header>
@@ -31,7 +35,7 @@
     <main class="o-main">
 
         <!-- CENTER SECTION -->
-        <section class="c-section">
+        <section class="c-section" id="section-center">
             <input type="radio" class="c-section__toggle-input" name="main-section" id="toggle-center" hidden>
             <label for="toggle-center" class="c-section__header">
                 <span class="c-section__title">CENTER THAT DIV</span>
@@ -176,14 +180,14 @@
         </section>
 
         <!-- TABLES SECTION -->
-        <div class="c-section">
+        <div class="c-section" id="section-tables">
             <input type="radio" class="c-section__toggle-input" name="main-section" id="toggle-tables" hidden>
             <label for="toggle-tables" class="c-section__header">
-                <span class="c-section__title">TABLES</span>
+                <h2 class="c-section__title">TABLES</h2>
             </label>
             <div class="c-section__content">
                 <section id="table" class="c-table-container">
-                    <h3>1. Collapse to Cards </h3>
+                    <h4>1. Collapse to Cards </h4>
                     <table class="c-styled-table">
                         <thead>
                             <tr>
@@ -241,7 +245,7 @@
 
                 </section>
                 <section>
-                    <h3>2. Collapse to Scrollable Table</h3>
+                    <h4>2. Collapse to Scrollable Table</h4>
                     <div class="c-scroll-container ">
                         <table class="c-scrollable-table">
                             <thead>
@@ -276,7 +280,7 @@
                     </div>
                 </section>
                 <section id="collapsible-table">
-                    <h3>3. Collapse to fewer columns</h3>
+                    <h4>3. Collapse to fewer columns</h4>
                     <div>
                         <table class="c-collapsible-table">
                             <thead>
@@ -315,7 +319,7 @@
         </div>
 
         <!-- FORM SECTION -->
-        <section class="c-section">
+        <section class="c-section" id="section-form">
             <input type="radio" class="c-section__toggle-input" name="main-section" id="toggle-form" hidden>
             <label for="toggle-form" class="c-section__header">
                 <span class="c-section__title">CONTACT FORM</span>
@@ -346,7 +350,7 @@
             </div>
         </section>
     </main>
-
+<hr>
     <footer class="o-footer">
         <p>FWFT: Mariam Gevorgyan</p>
         <p>
@@ -363,6 +367,7 @@
     <script src="scripts/tabs.js" defer></script>
     <script src="scripts/form-validation.js" defer></script>
     <script src="scripts/js-animation.js" defer></script>
+    <script src="scripts/section-toggle.js" defer></script>
 </body>
 
 </html>

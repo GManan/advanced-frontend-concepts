@@ -1,3 +1,7 @@
+// --------------------------------------------------
+// SETTINGS: Design Tokens & Variables (ITCSS Layer)
+// --------------------------------------------------
+
 // Font Sizes
 $font-size-sm: 0.875rem; // 14px
 $font-size-base: 1rem; // 16px
@@ -5,19 +9,24 @@ $font-size-lg: 1.125rem; // 18px
 $font-size-xl: 1.5rem; // 24px
 $font-size-xxl: 2rem; // 32px
 
-$tabs-panel-height: 50vh;
-$demo-box-container-length: 20rem;
-$demo-box-container-color: hsl(327, 64%, 50%);
-$demo-box-container-background-color: hsl(305, 49%, 97%);
-// $tabs-active-color: ;
+// Header Sizes
+$header-height-sm: 3rem;
+$header-height-md: 4rem;
+$header-height-lg: 10rem;
+$header-height-standard: $header-height-lg;
+
+// Spacing
 $title-padding: 0.5em;
 $standard-padding: 0.5em;
 $standard-radius: 1em;
 $standard-margin: 1em;
-$section-border-color: $demo-box-container-color;
-$panels-background-color: $demo-box-container-background-color;
+$padding-header: 1em;
 
+// Component Dimensions
+$tabs-panel-height: 50vh;
+$demo-box-container-length: 20rem;
 
+// Colors
 $clr-background: hsl(0, 0%, 95%);
 $clr-primary: hsl(234, 24%, 51%);
 $clr-secondary: hsl(283, 25%, 70%);
@@ -27,13 +36,25 @@ $clr-error: hsl(0, 74%, 62%);
 $clr-success: hsl(167, 72%, 17%);
 $clr-text: hsl(0, 1%, 13%);
 $clr-text-on-accent: hsl(0, 0%, 100%);
+
+// Table Colors
 $clr-table-row: hsl(236, 53%, 94%);
 $clr-table-header-bg: $clr-secondary;
 $clr-table-alternate-bg: hsl(210, 50%, 96%);
 
+// Gradients
 $clr-linearPrimarySecondary: linear-gradient(hsl(234, 24%, 51%), hsl(283, 25%, 70%));
 $clr-linearPrimaryAccent: linear-gradient(hsl(234, 24%, 51%), hsl(300, 24%, 64%));
 $clr-linearSecondaryAccent: linear-gradient(hsl(283, 25%, 70%), hsl(300, 24%, 64%));
 $clr-radialPrimarySecondary: radial-gradient(hsl(234, 24%, 51%), hsl(283, 25%, 70%));
 $clr-radialPrimaryAccent: radial-gradient(hsl(234, 24%, 51%), hsl(300, 24%, 64%));
 $clr-radialSecondaryAccent: radial-gradient(hsl(283, 25%, 70%), hsl(300, 24%, 64%));
+
+// Component Colors
+$demo-box-container-color: hsl(327, 64%, 50%);
+$demo-box-container-background-color: hsl(305, 49%, 97%);
+$section-border-color: $demo-box-container-color;
+$panels-background-color: $demo-box-container-background-color;
+
+// Misc
+// $tabs-active-color: ;
