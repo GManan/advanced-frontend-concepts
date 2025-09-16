@@ -8,6 +8,8 @@
     }
 
     .c-styled-table tr {
+        width: 100%;
+        min-width: fit-content;
         display: block;
         margin-bottom: 1rem;
         border: 1px solid $clr-secondary;
@@ -102,30 +104,20 @@ tbody tr:nth-child(even) {
     border-collapse: collapse;
     font-size: 1rem;
 
-    @container (max-width: 800px) {
-        font-size: 1.1rem;
 
-
-        td,
-        th {
-            padding: 0.8rem;
-            border: 1px solid $clr-secondary;
-        }
-    }
     //CONTAINER QUERY FOR TABLE
-    @container (max-width: 600px) {
-        font-size: 1.2rem;
+    @container (max-width: 900px) {
+        font-size: $font-size-lg;
        td  {
             white-space: normal; // allows wrapping
             word-wrap: break-word; // ensures long words break
             overflow-wrap: break-word; // modern standard
-            font-size: 200%;
         }
         td,
         th {
             text-wrap: wrap;
-            padding: 1rem;
-            border: none;
+            padding: 1.6rem;
+
         }
     }
 }
