@@ -1,3 +1,8 @@
+@use "../settings/variables" as *;
+
+
+
+
 @keyframes anticipate-scale {
     0% {
         transform: scale(1);
@@ -9,5 +14,183 @@
 
     100% {
         transform: scale(1.2);
+    }
+}
+
+
+/**
+* ANIMATION SECTION for the 12 principles of animation (well not 12)
+*/
+
+.trans {
+    height: $tabs-panel-height;
+    width: $tabs-panel-height;
+    // border: 1px solid;
+    border-radius: 2em;
+    position: relative;
+    display: flex;
+    // justify-content: center;
+    margin-left: 30vw;
+    align-items: center;
+}
+
+.ball {
+
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border-top: $clr-accent 40px solid;
+    background-color: $clr-primary;
+    // top: 10%;
+    // right: 100%;
+}
+
+
+
+
+//SQUISH AND STRETCH
+.ball-squish-and-stretch {
+    animation: 1s cubic-bezier(1, .99, 0, -0.04) infinite;
+    will-change: transform;
+    animation-name: squish-and-stretch;
+}
+
+@keyframes squish-and-stretch {
+    0% {
+        transform: translateY(0) scale(1, 1);
+    }
+
+    30% {
+        transform: translateY(70%) scale(1, 1); // falling
+    }
+
+    50% {
+        transform: translateY(100%) scale(1.2, 0.8); // squish on impact
+    }
+
+    60% {
+        transform: translateY(60%) scale(0.9, 1.1); // stretch after bounce
+    }
+
+    80% {
+        transform: translateY(20%) scale(1.05, 0.95); // easing upward
+    }
+
+    100% {
+        transform: translateY(0) scale(1, 1); // back to start
+    }
+}
+
+//ANTICIPATION
+.cta-text {
+    position: absolute;
+    color: $clr-accent;
+}
+
+.ball-anticipation {
+    animation: 1s ease-in-out infinite;
+    will-change: transform;
+
+    &:hover {
+        animation: anticipation 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+}
+
+@keyframes anticipation {
+    0% {
+        transform: scale(1);
+    }
+
+    15% {
+        /* Anticipation: slight shrink */
+        transform: scale(0.98);
+    }
+
+    25% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        /* Overshoot: larger than final state */
+        transform: scale(1.5);
+    }
+
+    100% {
+        /* Settle: final state */
+        transform: scale(1.05);
+    }
+}
+
+// FOLLOW THROUGH AND OVERLAPPING ACTION
+.ball-follow-through {
+    
+    animation: follow-through 4s ease infinite;
+    will-change: transform;
+}
+
+@keyframes follow-through {
+    0% {
+        transform: translateX(-20vw) scale(1, 1);
+    }
+
+    50% {
+        transform: translateX(32vw) scale(1.05, 0.95); // overshoot right
+    }
+
+    55% {
+        transform: translateX(28vw) scale(0.95, 1.05); // pull back
+    }
+
+    60% {
+        transform: translateX(30vw) scale(1, 1); // settle right
+    }
+
+    90% {
+        transform: translateX(-22vw) scale(0.95, 1.05); // overshoot left
+    }
+
+    95% {
+        transform: translateX(-18vw) scale(1.05, 0.95); // pull back right a little
+    }
+
+    100% {
+        transform: translateX(-20vw) scale(1, 1); // settle left
+    }
+}
+
+
+
+// ARC MOTION
+
+.ball-arc {
+    width: 200px;
+    height: 200px;
+    animation: move-along-path 3s infinite linear;
+    offset-path: path("M -300 200 C -100 -200, 100 -200, 500 200");
+    offset-rotate: auto 90deg;
+}
+
+@keyframes move-along-path {
+    0% {
+        offset-distance: 0%;
+        transform: scale(1, 1);
+    }
+    50% {
+        offset-distance: 100%;
+        transform: scale(1, 1);
+    }
+    // normal while traveling
+
+    60% {
+        transform:  scale(0.9, 1.1); // stretch after bounce
+    }
+
+    80% {
+        transform:  scale(1.05, 0.95); // easing upward
+    }
+
+    90% {
+        transform: translateY(60) scale(1, 1); // back to start
     }
 }

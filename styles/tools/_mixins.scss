@@ -1,8 +1,9 @@
 @use "../settings/variables" as *;
 @use "../tools/animations" as *;
+
 @mixin button-primary {
   background-color: $clr-primary;
-  color: #fff;
+  color: $clr-background;
   border: none;
   border-radius: 0.3em;
   padding: 0.6em 1.2em;
@@ -11,7 +12,7 @@
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: darken($clr-primary, 10%);
+    background-color: $clr-accent;
   }
 }
 
@@ -24,6 +25,7 @@
     animation: anticipate-scale 1.2s ease forwards;
     color: $clr-accent;
 }
+
 @mixin responsive-nav {
     ul {
         display: flex;

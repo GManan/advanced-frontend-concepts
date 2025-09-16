@@ -4,14 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <!-- Light mode color -->
+    <meta name="theme-color" content="hsl(0, 0%, 95%)" media="(prefers-color-scheme: light)">
+    <!-- Dark mode color -->
+    <meta name="theme-color" content="hsl(0, 1%, 13%)" media="(prefers-color-scheme: dark)">
+
     <title>Don't be scared of CSS</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body class="o-page">
     <header class="o-header">
-        <h1>SEMESTER PROJECT</h1>
-        <h2>Don't be scared of CSS</h2>
+        <!-- <h1>SEMESTER PROJECT</h1> -->
+        <h1>Don't be scared of CSS</h1>
         <nav class="c-navbar">
             <ul>
                 <li><a href="#toggle-center">Center that div</a></li>
@@ -26,7 +32,7 @@
 
         <!-- CENTER SECTION -->
         <section class="c-section">
-            <input type="checkbox" class="c-section__toggle-input" id="toggle-center" hidden>
+            <input type="radio" class="c-section__toggle-input" name="main-section" id="toggle-center" hidden>
             <label for="toggle-center" class="c-section__header">
                 <span class="c-section__title">CENTER THAT DIV</span>
             </label>
@@ -103,33 +109,73 @@
         </section>
 
         <!-- ANIMATIONS SECTION -->
-        <section class="c-section">
-            <input type="checkbox" class="c-section__toggle-input" id="toggle-animations" hidden>
+        <section class="c-section" id="section-animations">
+            <input type="radio" class="c-section__toggle-input" name="main-section" id="toggle-animations" hidden>
             <label for="toggle-animations" class="c-section__header">
                 <span class="c-section__title">ANIMATIONS</span>
             </label>
-            <section class="c-section__content">
-                <div class="o-animations-demo">
-                    <div class="o-animations-demo__box o-animations-demo__box--bounce">Bounce</div>
-                    <div class="o-animations-demo__box o-animations-demo__box--shake">Shake</div>
-                    <div class="o-animations-demo__box o-animations-demo__box--pulse">Pulse</div>
-                    <div class="o-animations-demo__box o-animations-demo__box--flash">Flash</div>
-                    <div class="o-animations-demo__box o-animations-demo__box--rubber-band">Rubber Band</div>
-                    <div class="o-animations-demo__box o-animations-demo__box--swing">Swing</div>
-                    <div class="o-animations-demo__box o-animations-demo__box--tada">Tada</div>
-                    <div class="o-animations-demo__box o-animations-demo__box--wobble">Wobble</div>
+            <section class="c-section__content c-tabs" aria-label="Centering techniques">
+                <div class="c-tabs__labels" role="tablist">
+                    <button data-tab="panel-1" class="c-tabs__label c-tabs__label--active">Squash & Stretch</button>
+                    <button data-tab="panel-2" class="c-tabs__label">Anticipation</button>
+                    <button data-tab="panel-3" class="c-tabs__label">Follow Through</button>
+                    <button data-tab="panel-4" class="c-tabs__label">Arc</button>
+                    <button data-tab="panel-5" class="c-tabs__label" disabled>Straight ahead action and pose to
+                        pose</button>
+                    <button data-tab="panel-6" class="c-tabs__label" disabled>Slow in and slow out</button>
+                    <button data-tab="panel-7" class="c-tabs__label" disabled>Staging</button>
+                    <button data-tab="panel-8" class="c-tabs__label" disabled>Secondary Action</button>
+                    <button data-tab="panel-9" class="c-tabs__label" disabled>Timing</button>
+                    <button data-tab="panel-10" class="c-tabs__label" disabled>Exaggeration</button>
+                    <button data-tab="panel-11" class="c-tabs__label" disabled>Solid drawing</button>
+                    <button data-tab="panel-12" class="c-tabs__label" disabled>Appeal</button>
+                </div>
+                <!-- TAB PANELS -->
+                <div class="c-tabs__panels">
+                    <section id="panel-1" class="c-tabs__panel c-tabs__panel--active">
+                        <div class="trans">
+                            <div id="ball1" class="ball ball-squish-and-stretch"></div>
+                        </div>
+                    </section>
+
+                    <section id="panel-2" class="c-tabs__panel">
+                        <h4 class="cta-text">Hover over the circle</h4>
+                        <div class="trans">
+                            <!-- <div id="ball2" class="ball ball--anticipation"></div> -->
+                            <div id="ball3" class="ball ball-anticipation"></div>
+                            <div class="cta-text"></div>
+                        </div>
+                    </section>
+
+                    <section id="panel-3" class="c-tabs__panel">
+                        <div class="trans">
+                            <div class="ball ball-follow-through"></div>
+                        </div>
+                    </section>
+                    <section id="panel-4" class="c-tabs__panel">
+                        <div class="trans">
+                            <div class="ball ball-arc"></div>
+                        </div>
+                    </section>
+
+                    <section id="panel-5" class="c-tabs__panel">
+                        <div class="trans">
+                            <div class="o-center-demo__box ease-in-out">Ease In / Out</div>
+                        </div>
+                    </section>
+
                 </div>
             </section>
         </section>
 
         <!-- TABLES SECTION -->
         <div class="c-section">
-            <input type="checkbox" class="c-section__toggle-input" id="toggle-tables" hidden>
+            <input type="radio" class="c-section__toggle-input" name="main-section" id="toggle-tables" hidden>
             <label for="toggle-tables" class="c-section__header">
                 <span class="c-section__title">TABLES</span>
             </label>
             <div class="c-section__content">
-                <section id="table">
+                <section id="table" class="c-table-container">
                     <h3>1. Collapse to Cards </h3>
                     <table class="c-styled-table">
                         <thead>
@@ -223,7 +269,7 @@
                     </div>
                 </section>
                 <section id="collapsible-table">
-                    <h3>3. Collapse to fewer rows</h3>
+                    <h3>3. Collapse to fewer columns</h3>
                     <div>
                         <table class="c-collapsible-table">
                             <thead>
@@ -263,7 +309,7 @@
 
         <!-- FORM SECTION -->
         <section class="c-section">
-            <input type="checkbox" class="c-section__toggle-input" id="toggle-form" hidden>
+            <input type="radio" class="c-section__toggle-input" name="main-section" id="toggle-form" hidden>
             <label for="toggle-form" class="c-section__header">
                 <span class="c-section__title">CONTACT FORM</span>
             </label>
@@ -288,7 +334,7 @@
                     </div>
 
                     <button type="submit">Send</button>
-                    <div class="c-form-demo__status" aria-live="polite"></div>               
+                    <div class="c-form-demo__status" aria-live="polite"></div>
                 </form>
             </div>
         </section>

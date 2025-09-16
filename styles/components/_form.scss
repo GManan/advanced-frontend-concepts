@@ -43,7 +43,7 @@
   }
 
   &__submit {
-    @include mixins.button-primary; 
+    // @include mixins.button-primary; 
     align-self: flex-start;
   }
 
@@ -61,7 +61,7 @@ button {
 
   &:hover {
     // @include mixins.button-hover;
-    background-color: darken($clr-primary, 10%);
+    background-color: $clr-accent;
   }
 }
 // Responsive tweaks

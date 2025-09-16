@@ -1,34 +1,86 @@
-    /* primitives */
-    $clr-grey-300: hsl(0 0 30%);
-    $clr-grey-400: hsl(0 0 40%);
-    $clr-grey-500: hsl(0 0 50%);
-    $clr-grey-600: hsl(0 0 60%);
-    $clr-grey-700: hsl(0, 0%, 100%);
-    $clr-red-500: hsl(0 100% 50%);
-    $clr-blue-500: hsl(240 100% 50%);
-    $clr-green-500: hsl(167, 72%, 17%);
-    $clr-link-color: hsl(246, 23%, 9%);
-    $clr-main-bg: var(--clr-grey-700);
-    $clr-accent: var(--clr-red-500);
+    // /* primitives */
+    // $clr-grey-300: hsl(0 0 30%);
+    // $clr-grey-400: hsl(0 0 40%);
+    // $clr-grey-500: hsl(0 0 50%);
+    // $clr-grey-600: hsl(0 0 60%);
+    // $clr-grey-700: hsl(0, 0%, 100%);
+    // $clr-red-500: hsl(0 100% 50%);
+    // $clr-blue-500: hsl(240 100% 50%);
+    // $clr-green-500: hsl(167, 72%, 17%);
+    // $clr-link-color: hsl(246, 23%, 9%);
+    // $clr-main-bg: $clr-grey-700;
+    // $clr-accent: var(--clr-red-500);
+
+
     $tabs-panel-height: 50vh;
     $demo-box-container-length: 20rem;
     $demo-box-container-color: hsl(327, 64%, 50%);
     $demo-box-container-background-color: hsl(305, 49%, 97%);
-    $tabs-active-color: hsl(305, 49%, 99%);
+    // $tabs-active-color: ;
     $title-padding: 0.5em;
     $standard-padding: 0.5em;
     $standard-radius: 1em;
+    $standard-margin: 1em;
     $section-border-color: $demo-box-container-color;
     $panels-background-color: $demo-box-container-background-color;
-    $table-alternate-bg: hsl(210, 50%, 96%);
-    $main-bg-color: hsl(0 0 90%);
-    $ff-basic: "Open Sans", Verdana, sans-serif;
-
-
-    $clr-text: hsl(116, 74%, 5%);
-    $clr-text-on-accent: hsl(0, 0%, 100%);
-    $clr-background: hsl(115, 76%, 97%);
-    $clr-primary: hsl(116, 74%, 50%);
-    $clr-secondary: hsl(270, 74%, 73%);
-    $clr-accent: hsl(322, 74%, 62%);
+    // $main-bg-color: hsl(0 0 90%);
+    // $ff-basic: "Open Sans", Verdana, sans-serif;
+    // $themes: (
+    //     light: (text: hsl(0, 1%, 13%),
+    $clr-background: hsl(0, 0%, 95%);
+    $clr-primary: hsl(234, 24%, 51%);
+    $clr-secondary: hsl(283, 25%, 70%);
+    $clr-accent: hsl(300, 24%, 64%);
+    $clr-link-color: hsl(246, 23%, 9%);
     $clr-error: hsl(0, 74%, 62%);
+    $clr-success: hsl(167, 72%, 17%);
+    $clr-text: hsl(0, 1%, 13%);
+    $clr-text-on-accent: hsl(0, 0%, 100%);
+    $clr-table-row: hsl(236, 53%, 94%);
+    $clr-table-header-bg: $clr-secondary;
+    $clr-table-alternate-bg: hsl(210, 50%, 96%);
+    
+    $clr-linearPrimarySecondary: linear-gradient(hsl(234, 24%, 51%), hsl(283, 25%, 70%));
+    $clr-linearPrimaryAccent: linear-gradient(hsl(234, 24%, 51%), hsl(300, 24%, 64%));
+    $clr-linearSecondaryAccent: linear-gradient(hsl(283, 25%, 70%), hsl(300, 24%, 64%));
+    $clr-radialPrimarySecondary: radial-gradient(hsl(234, 24%, 51%), hsl(283, 25%, 70%));
+    $clr-radialPrimaryAccent: radial-gradient(hsl(234, 24%, 51%), hsl(300, 24%, 64%));
+    $clr-radialSecondaryAccent: radial-gradient(hsl(283, 25%, 70%), hsl(300, 24%, 64%));
+    //     ),
+    //     dark: (text: hsl(240, 20%, 96%),
+    //         background: hsl(0, 1%, 13%),
+    //         primary: hsl(234, 24%, 49%),
+    //         secondary: hsl(283, 25%, 30%),
+    //         accent: hsl(300, 24%, 36%),
+    //         linearPrimarySecondary: linear-gradient(hsl(234, 24%, 51%), hsl(283, 25%, 70%)),
+    //         linearPrimaryAccent: linear-gradient(hsl(234, 24%, 51%), hsl(300, 24%, 64%)),
+    //         linearSecondaryAccent: linear-gradient(hsl(283, 25%, 70%), hsl(300, 24%, 64%)),
+    //         radialPrimarySecondary: radial-gradient(hsl(234, 24%, 51%), hsl(283, 25%, 70%)),
+    //         radialPrimaryAccent: radial-gradient(hsl(234, 24%, 51%), hsl(300, 24%, 64%)),
+    //         radialSecondaryAccent: radial-gradient(hsl(283, 25%, 70%), hsl(300, 24%, 64%)),
+    //         ),
+    // );
+    // Generate CSS vars for each theme
+    // @each $theme-name, $map in $themes {
+    //   @if $theme-name == light {
+    //     :root {
+    //       @each $k, $v in $map {
+    //         --clr-#{$k}: #{$v};
+    //       }
+    //     }
+    //   } @else {
+    //     [data-theme="#{$theme-name}"] {
+    //       @each $k, $v in $map {
+    //         --clr-#{$k}: #{$v};
+    //       }
+    //     }
+    //   }
+    // }
+
+    // $clr-text: hsl(116, 74%, 5%);
+    // $clr-text-on-accent: hsl(0, 0%, 100%);
+    // $clr-background: hsl(115, 76%, 97%);
+    // // $clr-primary: hsl(116, 74%, 50%);
+    // $clr-secondary: hsl(270, 74%, 73%);
+    // $clr-accent: hsl(322, 74%, 62%);
+    // $clr-error: hsl(0, 74%, 62%);

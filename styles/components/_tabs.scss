@@ -3,68 +3,86 @@
 
 // Hide radio inputs
 input[name="center-tabs"] {
-  display: none;
+    display: none;
 }
 
 .c-tabs {
-  display: block;
+    display: block;
+     flex: 0 0 25%; // 4 tabs per view
 
-  &__labels {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  &__label {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom: none;
-    padding: 0.5em 1em;
-    border: 1px solid $clr-accent;
-    cursor: pointer;
-    flex: 1;
-    text-align: center;
-
-    &--active,
-    &:hover {
-      background-color: $tabs-active-color;
-      border-bottom: none;
+    &__labels {
+        display: flex;
+        justify-content: space-around;
+        overflow-x: auto;
+        min-height: auto;
+        // height: -webkit-fill-available;
+        flex-wrap: wrap;
     }
-  }
+    
+    &__label {
+        height: -webkit-fill-available;
+        flex: 0 0 25%; // 4 tabs per view
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: none;
+        padding: 0.5em 1em;
+        border: 1px solid $clr-accent;
+        background-color: $clr-background;
+        cursor: pointer;
+        flex: 1;
+        text-align: center;
+        color: $clr-text;
 
-  &__panels {
-    position: relative;
-    border: 1px solid $clr-accent;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-top: none;
-    padding: $standard-padding;
-    background-color: $panels-background-color;
-  }
-
-  &__panel {
-    display: none;
-
-    & > * {
-      flex-grow: 1;
-      height: $tabs-panel-height;
+        &--active,
+        &:hover {
+            background-color: $clr-background;
+            color: $clr-text;
+            border-bottom: none;
+            color: $clr-accent;
+        }
+        &:disabled{
+            cursor: not-allowed;
+            opacity: 0.5;
+            pointer-events: none;
+        }
     }
 
-    &--active {
-      display: flex;
-      flex-direction: row;
-      gap: 1em;
-      margin-bottom: 1em;
+    &__panels {
+        position: relative;
+        border: 1px solid $clr-accent;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-top: none;
+        padding: $standard-padding;
+        background-color: $clr-background;
     }
-  }
+
+    &__panel {
+        display: none;
+
+        &>* {
+            flex-grow: 1;
+        }
+        
+        &--active {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            position: relative;
+            flex-direction: row;
+            gap: 1em;
+            margin-bottom: 1em;
+        }
+    }
 }
 
 // Responsive stacking
 @media (max-width: 768px) {
-  .c-tabs__panel--active {
-    flex-direction: column; // stack children vertically
-  }
+    .c-tabs__panel--active {
+        flex-direction: column; // stack children vertically
+    }
 
-  .c-tabs__panel--active > * {
-    max-width: 100%;
-  }
+    .c-tabs__panel--active>* {
+        max-width: 100%;
+    }
 }

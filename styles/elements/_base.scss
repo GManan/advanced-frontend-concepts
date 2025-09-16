@@ -1,4 +1,11 @@
 @use "../settings/variables" as *;
+@use "../tools/mixins" as mixins;
+// @import url('https://fonts.googleapis.com/css?family=Ovo:700|Ovo:400');
+// @import url('https://fonts.googleapis.com/css?family=Montagu%20Slab:700|Montagu%20Slab:400');
+// @import url('https://fonts.googleapis.com/css?family=Zen%20Dots:700|Zen%20Dots:400');
+// @import url('https://fonts.googleapis.com/css?family=Days%20One:700|Days%20One:400');
+@import url('https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400');
+
 
 @layer base {
 
@@ -8,12 +15,11 @@
     // padding: 2%;
   }
 
-  /* Custom Properties */
   :root {
-
-    line-height: 1.6;
+  line-height: 1.6;
     font-size: 1rem;
-    font-family: $ff-basic;
+    background: $clr-background;
+    // font-family: $ff-basic;
     /* for quotation marks and the like, progressive enhancement, webkit only */
     hanging-punctuation: first last;
   }
@@ -27,28 +33,50 @@
   label {
     line-height: 1.1;
   }
+h3{
+  margin-top: $standard-margin;
+}
+html,
+body,
+footer {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  background-color: $clr-background;
+}
+footer{
+  padding: 2em;
+  // text-align: center;
+  font-size: 0.9em;
+  background-color: $clr-linearPrimaryAccent;
+  // color: $clr-primary;
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
 
-  h1 {
-    font-size: 1.8rem;
-  }
+html {font-size: 100%;} /* 16px */
 
-  h2 {
-    font-size: 1.5rem;
-  }
+h1 {font-size: 4.210rem; /* 67.36px */}
 
-  h3 {
-    font-size: 1.3rem;
-    padding: $standard-padding 0;
-    margin-top: 1.3em;
-  }
+h2 {font-size: 3.158rem; /* 50.56px */}
+
+h3 {font-size: 2.369rem; /* 37.92px */}
+
+h4 {font-size: 1.777rem; /* 28.48px */}
+
+h5 {font-size: 1.333rem; /* 21.28px */}
+
+small {font-size: 0.750rem; /* 12px */}
+largerH1 {font-size: 5.210rem; /* 83.36px */} 
 
   article {
-    background: $main-bg-color;
-    font-family: $ff-basic;
+    background: $clr-background;
+    // font-family: $ff-basic;
   }
 
   p {
-    background: $clr-main-bg;
+    background: $clr-background;
     padding: 5em;
   }
 
@@ -59,13 +87,19 @@
 
   a:hover,
   a:focus-visible {
-    color: $clr-green-500;
+    color: $clr-accent;
   }
 
   /* focus vs. focus-visible for tab,
   try both */
+  button {
+    @include mixins.button-primary;
+    margin-top: 1em;
+    align-self: flex-start;
+    cursor: pointer;
+  }
   button:focus-visible {
-    color: $clr-red-500;
+    color: $clr-accent;
   }
 
   table {
@@ -78,6 +112,12 @@
     box-sizing: border-box;
     line-height: 1.5em;
     padding: 1em;
+  }
+  tr{
+    border: 1px solid $clr-secondary;
+    padding: 1em;
+    border-radius: 8px;
+    background-color: $clr-table-row;
   }
 
 
