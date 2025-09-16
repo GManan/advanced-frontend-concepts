@@ -3,13 +3,15 @@
 .c-section {
   box-sizing: border-box;
   margin: 0.5em 0;
-  background-color: $clr-background;
+  opacity: 1;
   border: solid 0.2em $clr-secondary;
-  scroll-margin-top: $header-height-standard
+  scroll-margin-top: $header-height-standard;
+  z-index: 0;
   h4{
     padding: $standard-padding;
   }
   &__header {
+    // background: $clr-background;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -1,0 +1,37 @@
+@use "../settings/variables" as *;
+
+body {
+  position: relative;
+  background-color: $clr-background;
+  overflow: hidden; // Prevents dots from creating a scrollbar
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 15% 30%, $clr-accent 2px, transparent 3px),
+      radial-gradient(circle at 85% 70%, $clr-secondary 2px, transparent 3px),
+      radial-gradient(circle at 30% 50%, $clr-primary 2px, transparent 3px),
+      radial-gradient(circle at 25% 10%, $clr-accent 2px, transparent 3px),
+      radial-gradient(circle at 70% 85%, $clr-secondary 2px, transparent 3px)
+      ;
+    background-size: 50% 50%, 50% 50%, 50% 50%;
+    background-repeat: no-repeat;
+    background-color: $clr-linearPrimaryAccent;
+    animation: floatDots 30s infinite alternate ease-in-out;
+    z-index: -1;
+  }
+}
+
+@keyframes floatDots {
+  0% {
+    background-position: 0 0, 100% 100%, 50% 50%;
+  }
+  100% {
+    background-position: 100% 100%, 0 0, 50% 50%;
+  }
+}

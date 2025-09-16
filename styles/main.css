@@ -292,7 +292,8 @@
   footer {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
-    background-color: hsl(0, 0%, 95%);
+    background: hsl(0, 0%, 95%);
+    z-index: 0;
   }
   footer {
     padding: 2em;
@@ -460,13 +461,44 @@
   transform: translate(-50%, -50%);
 }
 
+body {
+  position: relative;
+  background-color: hsl(0, 0%, 95%);
+  overflow: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 15% 30%, hsl(300, 24%, 64%) 2px, transparent 3px), radial-gradient(circle at 85% 70%, hsl(283, 25%, 70%) 2px, transparent 3px), radial-gradient(circle at 30% 50%, hsl(234, 24%, 51%) 2px, transparent 3px), radial-gradient(circle at 25% 10%, hsl(300, 24%, 64%) 2px, transparent 3px), radial-gradient(circle at 70% 85%, hsl(283, 25%, 70%) 2px, transparent 3px);
+  background-size: 50% 50%, 50% 50%, 50% 50%;
+  background-repeat: no-repeat;
+  background-color: linear-gradient(hsl(234, 24%, 51%), hsl(300, 24%, 64%));
+  animation: floatDots 30s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+@keyframes floatDots {
+  0% {
+    background-position: 0 0, 100% 100%, 50% 50%;
+  }
+  100% {
+    background-position: 100% 100%, 0 0, 50% 50%;
+  }
+}
 .c-section {
   box-sizing: border-box;
   margin: 0.5em 0;
-  background-color: hsl(0, 0%, 95%);
+  opacity: 1;
   border: solid 0.2em hsl(283, 25%, 70%);
-  scroll-margin-top: 10rem h4;
-  scroll-margin-top-padding: 0.5em;
+  scroll-margin-top: 10rem;
+  z-index: 0;
+}
+.c-section h4 {
+  padding: 0.5em;
 }
 .c-section__header {
   display: flex;

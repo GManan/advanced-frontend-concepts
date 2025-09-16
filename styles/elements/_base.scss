@@ -41,7 +41,8 @@ body,
 footer {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  background-color: $clr-background;
+  background: $clr-background;
+  z-index: 0;
 }
 footer{
   padding: 2em;
